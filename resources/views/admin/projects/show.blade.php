@@ -9,6 +9,14 @@
         <p>Tipo: {{$project->type->name}}</p>
     @endif
 
+    @if ($project->technologies)
+      <div class="mb-3">
+        @foreach ($project->technologies as $technology)
+            <span class="badge text-bg-warning">{{$technology->name}}</span>
+        @endforeach
+      </div>
+    @endif
+
     @if ($project->cover_image)
 
         <div class="cover_image">
